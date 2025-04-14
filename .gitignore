@@ -1,0 +1,56 @@
+# Flutter/Dart
+.dart_tool/
+.pub-cache/
+build/
+*.g.dart
+*.freezed.dart
+lib/generated/
+*.flutter-plugins
+*.hot-restart
+pubspec.lock  # Optional: include if you want to track it
+ios/Flutter/Flutter.framework
+ios/Flutter/App.framework
+ios/Pods
+ios/Runner.xcworkspace
+ios/.symlinks
+macos/Flutter/GeneratedPluginRegistrant.swift
+
+# Go
+*.exe
+*.test
+*.out
+*.prof
+*.cover
+coverage.out
+bin/
+dist/
+# vendor/  # Uncomment if using --mod=vendor
+
+# Docker
+docker-compose.override.yml
+Dockerfile.local
+Dockerfile.dev
+.docker/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Editor/IDE
+.vscode/
+.idea/
+*.sw?
+
+# System
+.DS_Store
+Thumbs.db
+
+# Node (optional, for tooling)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Sensitive files
+**/certs/*.pem

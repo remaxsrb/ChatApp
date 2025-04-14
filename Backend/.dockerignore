@@ -1,0 +1,19 @@
+# Binaries
+main
+
+# Vendor directory
+/vendor/
+
+# IDE files
+*.log
+*.tmp
+*.swp
+*.swo
+*.swn
+.idea
+.vscode
+.DS_Store
+
+# Git
+.git
+.gitignore
