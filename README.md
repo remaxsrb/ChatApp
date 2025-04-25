@@ -16,3 +16,16 @@ Before running the application, ensure you have the following installed:
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 - [Go](https://golang.org/doc/install)
+- [Android Studio](https://developer.android.com/studio) (for emulators on Windows/Linux)
+- [Xcode](https://developer.apple.com/xcode/) (for emulators on macOS)
+
+This application is built with mobile clients in mind. To run the app, you need to have Android Studio or Xcode installed to use emulators.
+
+Additionally, run the provided `generation.sh` script in the repository to generate the necessary certificates. After running the script:
+
+- Copy `server-cert.pem` and `server-key.pem` to `nginx/certs` on the backend.
+- Copy `ca-cert.pem` to `assets/certs` in the Flutter app.
+
+## Environment Variables
+
+Instructions coming soon.

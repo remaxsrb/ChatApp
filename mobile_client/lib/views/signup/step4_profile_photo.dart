@@ -5,7 +5,7 @@ import 'package:mobile_client/providers/registration_form.dart';
 import 'package:mobile_client/routes/app_routes.dart';
 import 'dart:io';
 
-import 'package:mobile_client/widgets/custom_button.dart'; // For File
+import 'package:mobile_client/widgets/custom_button.dart';
 
 class Step4ProfilePhoto extends ConsumerStatefulWidget {
   const Step4ProfilePhoto({super.key});
@@ -26,9 +26,7 @@ class _Step4ProfilePhotoState extends ConsumerState<Step4ProfilePhoto> {
     final formNotifier = ref.read(registrationFormProvider.notifier);
 
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-      ),
+      appBar: AppBar(automaticallyImplyLeading: false),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

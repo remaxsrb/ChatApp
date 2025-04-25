@@ -147,23 +147,16 @@ func CheckEmail(context *gin.Context) {
 }
 
 func ValidateLogin(context *gin.Context) {
-	var loginData struct {
-		Username string `json:"username"`
-		Password string `json:"password"`
-	}
+	username := context.PostForm("username")
+	password := context.PostForm("password")
 
-	if err := context.ShouldBindJSON(&loginData); err != nil {
-		context.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-		return
-	}
-
-	user, err := service.GetUserByUsername(loginData.Username)
+	user, err := service.GetUserByUsername(username)
 	if err != nil {
 		context.JSON(http.StatusNotFound, gin.H{"error": "Invalid username"})
 		return
 	}
 
-	if !user.CheckPassword(loginData.Password) {
+	if !user.CheckPassword(password) {
 		context.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid password"})
 		return
 	}

@@ -7,10 +7,18 @@ import (
 )
 
 func Login(context *gin.Context) {
-	username := context.PostForm("username")
-	password := context.PostForm("password")
 
-	token, err := service.Login(username, password)
+	var loginData struct {
+		Username string `json:"username"`
+		Password string `json:"password"`
+	}
+
+	if err := context.ShouldBindJSON(&loginData); err != nil {
+		context.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	token, err := service.Login(loginData.Username, loginData.Password)
 	if err != nil {
 		context.JSON(http.StatusUnauthorized, gin.H{"error": err.Error()})
 		return
