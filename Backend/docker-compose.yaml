@@ -8,6 +8,8 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+      redis:
+        condition: service_started
     restart: on-failure
 
   auth-service:
@@ -67,9 +69,18 @@ services:
 #    volumes:
 #      - mongo-data:/mongodb/data
 
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+
 volumes:
   postgres-data:
   mongo-data:
+  redis-data:
 
 networks:
   user_file_network:

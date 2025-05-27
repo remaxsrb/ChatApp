@@ -138,7 +138,7 @@ func CheckUserByUsername(context *gin.Context) {
 
 func CheckEmail(context *gin.Context) {
 	var email = context.Query("email")
-	err := service.ChekEmail(email)
+	err := service.CheckEmail(email)
 	if err != nil {
 		context.JSON(http.StatusOK, gin.H{"in_db": false})
 		return

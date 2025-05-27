@@ -13,6 +13,9 @@ func main() {
 	// Initialize PostgreSQL DB
 	config.InitPostgresDB()
 
+	// Initialize Redis
+	config.InitRedis()
+
 	// Set up router
 	r := router.SetupRouter()
 
